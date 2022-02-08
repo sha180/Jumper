@@ -3,7 +3,7 @@ using System;
 
 namespace Jumper.Game
 {
-    class Director
+    public class Director
     {
         public Director()
         {
@@ -12,7 +12,7 @@ namespace Jumper.Game
 
         public void StartGame()
         {
-            
+
         }
     }
 }
