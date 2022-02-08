@@ -1,15 +1,15 @@
 using System;
 
-namespace Jumper.game
+namespace Jumper.Game
 {
-    public class Jumper
+    public class JumperDraw
     {
-        public Jumper()
+        public JumperDraw()
         {
 
         }
 
-        public void DrawJumper(int lives){
+        public static void DrawJumper(int lives){
             switch (lives)
             {
                 case 4:
