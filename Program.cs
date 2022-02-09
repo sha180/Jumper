@@ -9,6 +9,7 @@ namespace Jumper
         {
             Director director = new Director();
             director.StartGame();
+
         }
     }
 }

@@ -20,6 +20,8 @@ namespace Jumper.Game
         {
         }
 
+
+
         /// <summary>
         /// Gets numerical input from the terminal. Directs the user with the given prompt.
         /// </summary>
@@ -135,6 +137,25 @@ namespace Jumper.Game
             }
             Console.WriteLine("\n");
 
+        }
+
+        public bool PlayAgain()
+        {
+            string Again = ReadText("do you want to play Again [Y/N]: ").ToLower();
+            switch (Again)
+            {
+                case "y":
+                
+                case "yes":
+
+                    return true;
+                case "n":
+
+                case "no":
+                    return false;
+                default:
+                    return false;
+            }
         }
 
 
