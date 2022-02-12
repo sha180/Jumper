@@ -16,9 +16,9 @@ namespace Jumper.Game
         {
 
         }
-        public void setNewWord(RandomWord randomWord)
+        public void setNewWord(string randomWord)
         { 
-            word = randomWord.getNewWord();
+            word = randomWord;
             
             for (int i = 0; i < word.Length; i ++)
             {

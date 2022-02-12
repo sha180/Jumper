@@ -9,6 +9,7 @@ namespace Jumper.Game
         int lives = 4;
         TerminalService terminalService = new TerminalService();
         PlayerDS player;
+        JumperDraw jumper = new JumperDraw();
 
         RandomWord randomWord = new RandomWord();
 
@@ -27,7 +28,8 @@ namespace Jumper.Game
         /// <returns>Inputted text.</returns>
         public void StartGame()
         {
-            player.setNewWord(randomWord);
+            string word = randomWord.getNewWord();
+            player.setNewWord(word);
             while(playGame)
             {
                 doOutputs();
@@ -44,9 +46,10 @@ namespace Jumper.Game
         /// <returns>Inputted text.</returns>
         private void doOutputs()
         {
+            string jumperArt = jumper.stringBuilder(lives);
             
-            terminalService.printWord(player.getGuess());
-            TerminalService.DrawJumper(lives);
+            terminalService.printSpacedWord(player.getGuess());
+            terminalService.WriteText(jumperArt);
 
         }
         /// <summary>
@@ -80,10 +83,11 @@ namespace Jumper.Game
             if (player.WordComplete()  !^ (lives < 1)) playGame = false;
 
             if (!playGame)
-            {
-                
-                terminalService.printWord(player.getWord());
-                TerminalService.DrawJumper(lives);
+            {   
+                string jumperArt = jumper.stringBuilder(lives);
+                terminalService.printSpacedWord(player.getWord());
+                terminalService.WriteText(jumperArt);
+                // TerminalService.DrawJumper(lives);
 
                 
             }

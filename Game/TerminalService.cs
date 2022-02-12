@@ -73,72 +73,10 @@ namespace Jumper.Game
         {
             Console.WriteLine(text);
         }
-
+        
         /// <summary>
-        /// Displays the jumper based on how mnay lives. 
+        /// askes if the user wants to pay again and returns a bool 
         /// </summary>
-        /// <param name="text">lives int.</param>
-        public static void DrawJumper(int lives){
-            
-            Debug.Assert(lives > -1 && lives < 5);
-
-            switch (lives)
-            {
-                case 4:
-                    Console.WriteLine("  ___");
-                    Console.WriteLine(" /___\\");
-                    Console.WriteLine(" \\   /");
-                    Console.WriteLine("  \\ /");
-                    Console.WriteLine("   O");
-                    Console.WriteLine("  /|\\");
-                    Console.WriteLine("  / \\");
-                    break;
-                case 3:
-                    Console.WriteLine(" /___\\");
-                    Console.WriteLine(" \\   /");
-                    Console.WriteLine("  \\ /");
-                    Console.WriteLine("   O");
-                    Console.WriteLine("  /|\\");
-                    Console.WriteLine("  / \\");
-                    break;
-                case 2:
-                    Console.WriteLine(" \\   /");
-                    Console.WriteLine("  \\ /");
-                    Console.WriteLine("   O");
-                    Console.WriteLine("  /|\\");
-                    Console.WriteLine("  / \\");
-                    break;
-                case 1:
-                    Console.WriteLine("  \\ /");
-                    Console.WriteLine("   O");
-                    Console.WriteLine("  /|\\");
-                    Console.WriteLine("  / \\");
-                    break;
-                case 0:
-                    Console.WriteLine("   x");
-                    Console.WriteLine("  /|\\");
-                    Console.WriteLine("  / \\");
-                    break;
-                default:
-                    Console.WriteLine("not " + lives);
-                    break;
-
-            }
-                Console.WriteLine("\n^^^^^^^\n");
-                
-        }
-
-        public void printWord(string Guessedword){
-
-            for (int i = 0; i < Guessedword.Length; i++){
-                
-                Console.Write($"{Guessedword[i]} ");
-                
-            }
-            Console.WriteLine("\n");
-
-        }
-
         public bool PlayAgain()
         {
             string Again = ReadText("do you want to play Again [Y/N]: ").ToLower();
@@ -158,6 +96,18 @@ namespace Jumper.Game
             }
         }
 
-
+        /// <summary>
+        /// Displays the given text on the terminal with a space at the end of every char. 
+        /// </summary>
+        /// <param name="word">text to space out.</param>
+        public void printSpacedWord(string Word){
+            Console.WriteLine();
+            for (int i = 0; i < Word.Length; i++){
+                
+                Console.Write($"{Word[i]} ");
+                
+            }
+            Console.WriteLine("\n");
+        }
     }
 }
